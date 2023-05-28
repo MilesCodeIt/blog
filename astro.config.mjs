@@ -8,6 +8,5 @@ export default defineConfig({
     injectReset: true
   }), solidJs()],
 
-  site: 'https://milescodeit.github.io',
-  base: '/blog'
+  site: 'https://blog.milescode.dev'
 });
