@@ -6,5 +6,8 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   integrations: [UnoCSS({
     injectReset: true
-  }), solidJs()]
+  }), solidJs()],
+
+  site: 'https://milescodeit.github.io',
+  base: '/blog'
 });
