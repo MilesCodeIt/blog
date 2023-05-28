@@ -1,0 +1,23 @@
+---
+import HtmlLayout from "./HtmlLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<HtmlLayout title={frontmatter.title}>
+  <!-- <a href="/"
+    class="fixed top-4 left-4"
+  >
+    back home
+  </a> -->
+  
+  <main class="max-w-2xl w-full mx-auto p-8 pt-32">
+    <header class="text-center space-y-2">
+      <h1 class="text-4xl font-semibold">{frontmatter.title}</h1>
+      <p>Written by {frontmatter.author}</p>
+    </header>
+
+    <article class="mt-4 text-base prose prose-truegray prose-invert xl:text-xl">
+      <slot />
+    </article>
+  </main>
+</HtmlLayout>

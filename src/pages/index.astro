@@ -1,0 +1,28 @@
+---
+import HtmlLayout from "../layouts/HtmlLayout.astro";
+const articlesFromImport = await Astro.glob('./article/*.md');
+import BlogList from "../components/ArticleList";
+
+const articles = Array.from(articlesFromImport, article => ({
+  title: article.frontmatter.title,
+  url: article.url ?? "/"
+}));
+---
+
+<HtmlLayout title="MilesCode - Articles">
+  <div class="fixed top-0 bottom-0 right-0 left-0 p-12 flex flex-col gap-2">
+    <header class="border-gray-300 border-2 px-4 py-2 relative flex justify-between">
+      <h1 class="left-0 right-0 absolute text-center -z-10">
+        <pre>Articles from MilesCode</pre>
+      </h1>
+      <pre>toggle theme</pre>
+    </header>
+    <main class="h-full border-gray-300 border-2 px-4 py-2">
+      <BlogList client:only articles={articles} />
+    </main>
+    <footer class="border-gray-300 border-2 px-4 py-2 flex justify-between items-center">
+      <p class="font-mono">up/down keys: move selection</p>
+      <p class="font-mono">enter: select</p>
+    </footer>
+  </div>
+</HtmlLayout>

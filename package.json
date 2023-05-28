@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "description": "Where we write some stuff.",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^2.2.0",
+    "astro": "^2.5.5",
+    "solid-js": "^1.7.5"
+  },
+  "devDependencies": {
+    "@unocss/astro": "^0.52.4",
+    "@unocss/reset": "^0.52.4",
+    "@unocss/transformer-variant-group": "^0.52.4",
+    "unocss": "^0.52.4"
+  }
+}
